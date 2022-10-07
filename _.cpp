@@ -28,7 +28,7 @@ int main(int argc,const char** argv)
     {
         // deal with stack size, not doing now!
     }
-    char c;
+    char c; 
     retp=malloc(sizeof(int));
     bp=retp+sizeof(int);
     realloc(bp,stack_size);
@@ -36,14 +36,14 @@ int main(int argc,const char** argv)
     // Possible chars: 
     while((c=getchar())+1)switch(c)
     {
-        case 9:break;           // undefined    '\t'
-        case 10:return ret;     // halt         '\n'
-        case 32:break;          // do nothing   ' '
-        case 33:t=!t;           // logic not    '!'
-        case 34:t=
+        case 9:break;// undefined '\t'
+        case 10:return ret;// do nothing '\n'
+        case 32:break;// halt ' '
+        case 33:*((unsigned char*)(t)-1)=!(*((unsigned char*)(t)-1));break;// logic not '!'
+        case 34:short* short_=(short*)(tp)-2;printf("%hd",*short_);delete short_;break;// output the topmost 2 integers as a short integer, i.e. top-1 ++ top-2
     }
     
     free(bp);
     free(retp);
-    return 0;
+    re;
 }
